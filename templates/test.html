@@ -1,0 +1,365 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>test dashboard</title>
+        <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}"
+    <link href={% static "css/bootstrap.min.css"%} rel="stylesheet">
+    <link href={% static "font-awesome/css/font-awesome.css"%} rel="stylesheet">
+        <link src='{% static "css/simple_card_alerts.css" %}' rel='stylesheet'>
+    <link href={% static "css/animate.css"%} rel="stylesheet">
+    <link href={% static "css/style.css"%} rel="stylesheet">
+        <!-- Mainly scripts -->
+   <script src={% static "js/jquery-3.1.1.min.js" %}></script>
+    <script src={% static "js/bootstrap.min.js"%}></script>
+    <script src={% static "js/plugins/metisMenu/jquery.metisMenu.js"%}></script>
+    <script src={% static "js/plugins/slimscroll/jquery.slimscroll.min.js"%}></script>
+    <link rel='stylesheet' href="{% static 'css/dashboard_style.css' %}">
+ <!-- <link rel="stylesheet" href="{% static 'css/login.css' %}">-->
+
+ <!-- Custom and plugin javascript -->
+    <script src={% static "js/inspinia.js"%}></script>
+    <script src={% static "js/plugins/pace/pace.min.js"%}></script>
+    </head>
+
+    <body>
+    <div id="wrapper">
+
+    <nav class="navbar-default navbar-static-side" role="navigation">
+        <div class="sidebar-collapse">
+            <ul class="nav metismenu" id="side-menu">
+                <li class="nav-header">
+                    <div class="dropdown profile-element"> <span>
+                            <img alt="image" class="img-circle" src="{% static 'images/profile_small.jpg' %}"/>
+                             </span>
+                        <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                            <span class="clear"> <span class="block m-t-xs"> <strong
+                                    class="font-bold">David Williams</strong>
+                             </span> <span class="text-muted text-xs block">Art Director <b
+                                    class="caret"></b></span> </span> </a>
+                        <ul class="dropdown-menu animated fadeInRight m-t-xs">
+                            <li><a href="profile.html">Profile</a></li>
+                            <li><a href="contacts.html">Contacts</a></li>
+                            <li><a href="mailbox.html">Mailbox</a></li>
+                            <li class="divider"></li>
+                            <li><a href="login.html">Logout</a></li>
+                        </ul>
+                    </div>
+                    <div class="logo-element">
+                        IN+
+                    </div>
+                </li>
+                <li>
+                    <a href=""><i class="fa fa-th-large"></i> <span
+                            class="nav-label">Dashboards</span></a>
+                </li>
+                <li>
+                    <a href="layouts.html"><i class="fa fa-diamond"></i> <span class="nav-label">Layouts</span></a>
+                </li>
+                <li>
+                    <a href=""><i class="fa fa-user"></i> <span class="nav-label">Edit Profile</span></a>
+                </li>
+                <li>
+                    <a href=""><i class="fa fa-calendar"></i> <span class="nav-label">Appointment History</span></a>
+                </li>
+
+
+            </ul>
+
+        </div>
+    </nav>
+
+    <div id="page-wrapper" class="gray-bg">
+        <div class="row border-bottom">
+            <nav class="navbar navbar-static-top  " role="navigation" style="margin-bottom: 0">
+                <div class="navbar-header">
+                    <a class="navbar-minimalize minimalize-styl-2 btn btn-primary " href="#"><i class="fa fa-bars"></i>
+                    </a>
+                    <form role="search" class="navbar-form-custom" action="search_results.html">
+                        <div class="form-group">
+                            <input type="text" placeholder="Search for something..." class="form-control"
+                                   name="top-search" id="top-search">
+                        </div>
+                    </form>
+                </div>
+                <ul class="nav navbar-top-links navbar-right">
+
+                    <li>
+                        <a href="login.html">
+                            <i class="fa fa-sign-out"></i> Log out
+                        </a>
+                    </li>
+                </ul>
+
+            </nav>
+        </div>
+        <div class="row wrapper border-bottom white-bg page-heading">
+    <div class="col-sm-4">
+        <h2>Welcome </h2>
+        <ol class="breadcrumb">
+            <li>
+                <a href="index.html">Home</a>
+            </li>
+            <li>
+                <strong>Dashboard</strong>
+            </li>
+        </ol>
+    </div>
+    </div>
+{#% endblock %#}
+
+{#% block main %#}
+<!--<form action="book" method="POST" class="form">{% csrf_token %}
+
+  <div class="login is-active">
+    <div class="profile"><i class="fa fa-camera fa-2x"></i></div>
+    <div class="form-element">
+      <span><i class="fa fa-envelope"></i></span><input required type="text" name="name" placeholder="Patient Name"/>
+    </div>
+    <div class="form-element">
+            <span><i class="fa fa-envelope"></i></span><input required type="email" name="email" placeholder="Your Email Address"/>
+    </div>
+    <div class="form-element">
+        <span><i class="fa fa-envelope"></i></span><input required type="number" name="age" placeholder="Age"/>
+    </div>
+    <div class="form-element">
+        <span><i class="fa fa-envelope"></i></span><input required type="text" name="location" placeholder="Enter location of appointment"/>
+    </div>
+    <div class="form-element">
+        <span><i class="fa fa-envelope"></i></span><input required type="datetime" name="time" placeholder="Enter Appointment Time"/>
+    </div>
+    <div class="form-element">
+        <span><i class="fa fa-envelope"></i></span><input required type="char" name="gender" placeholder="Gender"/>
+    </div>
+    <div class="form-element">
+            <span><i class="fa fa-lock"></i></span><input required name='phn_no' type="number" placeholder="Phone number"/>
+    </div>
+    <div class="form-element">
+      <span><i class="fa fa-lock"></i></span><input required name='slot_date' type="date" placeholder="Enter Appointment Date">
+  </div>
+
+    <button class="btn-login">Book Appointment</button>
+  </div>
+  </form>
+        -->
+
+   <!-- <div class="wrapper wrapper-content ">
+        <div class=" row animated fadeInRightBig">
+            <div class="col-lg-4">
+                <h3 class="font-bold">This is page content</h3>
+                <div class="error-desc">
+                    You can create here any grid layout you want. And any variation layout you imagine:) Check out
+                    main dashboard and other site. It use many different layout.
+                    <br/><a href="index.html" class="btn btn-primary m-t">Dashboard</a>
+                </div>
+            </div>
+            <div class="col-lg-8">-->
+
+                <!------------------------ Appoitnment Notification ---------------------->
+                <div class="widget red-bg p-lg text-center">
+                    <div class="m-b-sm">
+                        <i class="fa fa-bell fa-2x"></i>
+                        <h1 class="m-xs">47</h1>
+                        <h3 class="font-bold no-margins">
+                            Notification
+                        </h3>
+                        <small>We detect the error.</small>
+                    </div>
+                </div>
+               <!-- <div class="container">
+                    <div class="notice notice-info">
+                        <strong>Notice</strong> notice-info
+                    </div>
+                </div>-->
+                <!------------------------ /Appoitnment Notification ---------------------->
+
+
+                <!-- Medical History -->
+
+
+                <div class="ibox float-e-margins">
+                    <div class="ibox-title">
+
+                        <!--Heading Here-->
+                        <h5>Past Appointments & Medical History</h5>
+                        <!--/Heading Here-->
+                        <div class="ibox-tools">
+                            <a class="collapse-link">
+                                <i class="fa fa-chevron-up"></i>
+                            </a>
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                                <i class="fa fa-wrench"></i>
+                            </a>
+                        </div>
+                    </div>
+
+            
+                    <div class="ibox-content">
+                        <div class="panel-body">
+                            <div class="panel-group" id="accordion">
+
+
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading" style="vertical-align: middle;">
+                                            <h5 class="panel-title" style="margin-top: 0px">
+                                                <a data-toggle="collapse" data-parent="#accordion"
+                                                   href="#{{ App.id }}"></a>
+                                                    <div class="row">
+                                                        <div class="col-lg-5 text-center"> Date:  {{ App.date }} </div>
+                                                        <div class="col-lg-2 text-center"> | </div>
+                                                        <div class="col-lg-5 text-center">
+                                                            Doctor:
+                                                            <em>
+                                                            Dr. {{ App.doctor.first_name }} {{ App.doctor.last_name }}
+                                                            <div class="pull-right"><i class="fa fa-bars"
+                                                                                       aria-hidden="true"></i></div>
+                                                                </em>
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                            </h5>
+                                        </div>
+                                        <div id="{{ App.id }}" class="panel-collapse collapse">
+                                            <div class="panel-body">
+                                            <p>hello wrold</p>
+                                                <div class="panel panel-warning">
+                                                    <div class="panel-heading">
+                                                        Patient's <strong>Symptoms</strong>
+                                                        <div class="tooltip-demo inline pull-right"
+                                                             style="vertical-align: middle">
+                                                            <i class="fa fa-info-circle" aria-hidden="true"
+                                                               data-toggle="tooltip" data-placement="top"
+                                                               title="Patient's Issues Recorded prior to appointment"></i>
+                                                        </div>
+                                                    </div>
+                                                    <div class="panel-body">
+                                                        <p>{{ App.diagnostics }}</p>
+                                                    </div>
+                                                    <div class="panel-footer">
+                                                        - By Panel Footer
+                                                    </div>
+                                                </div>
+                                                <div class="panel panel-info">
+                                                    <div class="panel-heading">
+                                                        Diagnosis by
+                                                        <strong>{{ App.doctor.first_name }} {{ App.doctor.last_name }}</strong>
+                                                    </div>
+                                                    <div class="panel-body">
+                                                        <p>{{ App.diagnostics }}</p>
+                                                    </div>
+
+                                                </div>
+                                                <hr class="hr-line-dashed">
+                                                <div class="text-center">
+                                                    <button class="btn btn-success btn-sm btn-rounded">View
+                                                        Prescription
+                                                    </button>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- /Medical History -->
+            </div>
+        </div>
+    </div>
+
+
+
+        {#        ------------------------------------------ Main Containt-----------------------------------------------------#}
+
+        
+
+
+        <div class="footer">
+            <div class="pull-right">
+
+            </div>
+            <div>
+                <strong>Copyright</strong> Example Company &copy; 2014-2017
+            </div>
+            {#% block main_foot %#}
+                <!----------------- Testing ------------------------>
+
+                <div id="small-chat">
+                    <div id="inbox">
+                        <div class="fab btn-group show-on-hover dropup">
+                            <div data-toggle="tooltip" data-placement="left" title="Compose" style="margin-left: 42px;">
+                                <button type="button" class="btn btn-danger btn-io dropdown-toggle"
+                                        data-toggle="dropdown"
+                                        style="background-color: #d23f31;">
+                            <span class="fa-stack fa-1x">
+                                <i class="fa fa-circle fa-stack-1x fab-backdrop"></i>
+                                <i class="fa fa-plus fa-stack-1x fa-inverse fab-primary fa-2x"></i>
+                                <i class="fa fa-pencil fa-stack-1x fa-inverse fab-secondary fa-2x"></i>
+                            </span>
+                                </button>
+                            </div>
+                            <ul class="dropdown-menu dropdown-menu-right" role="menu">
+                                {#                        <li><a href="#" data-toggle="tooltip" data-placement="left" title="Coffee"><i#}
+                                {#                                class="fa fa-coffee"></i></a></li>#}
+                                {#                        <li><a href="#" data-toggle="tooltip" data-placement="left" title="LiveChat"><i#}
+                                {#                                class="fa fa-comments-o"></i></a></li>#}
+                                <li><a href="mailto:support@codeblue.in" data-toggle="tooltip" data-placement="left"
+                                       title="ContactUs"><i
+                                        class="fa fa-envelope"></i></a></li>
+                                <li><a href="#" data-toggle="tooltip" data-placement="left" title="Appointment"><i
+                                        class="fa fa-calendar"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!---------------- /Testing ------------------>
+            {#% endblock %#}
+        </div>
+
+    </div>
+</div>
+
+{#% include 'partials/footer_scripts.html' %#}
+{#% block footer %}{% endblock %#}
+
+
+    
+
+
+
+
+{#% block contain_title %#}
+
+
+
+
+{#% endblock %#}
+
+
+
+{#% block footer %#}
+
+    <script>
+        $('.fab').hover(function () {
+            $(this).toggleClass('active');
+        });
+        $(function () {
+            $('[data-toggle="tooltip"]').tooltip()
+        })
+
+    </script>
+
+
+{#% endblock %#}
+
+
+</body>
+</html>

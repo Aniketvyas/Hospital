@@ -1,0 +1,555 @@
+{% load static %}
+<!DOCTYPE HTML>
+<html>
+	<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>CLI'O</title>
+	
+	<link href='https://fonts.googleapis.com/css?family=Raleway:400,300,600,400italic,700' rel='stylesheet' type='text/css'>
+	
+	<!-- Animate.css -->
+	<link rel="stylesheet" href="{% static 'css/animate.css' %}">
+	<!-- Icomoon Icon Fonts-->
+	<link rel="stylesheet" href="{% static 'css/icomoon.css' %}">
+	<!-- Bootstrap  -->
+	<link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+
+	<!-- Magnific Popup -->
+	<link rel="stylesheet" href="{% static 'css/magnific-popup.css' %}">
+
+	<!-- Owl Carousel  -->
+	<link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %}">
+	<link rel="stylesheet" href="{% static 'css/owl.theme.default.min.css' %}">
+
+	<!-- Theme style  -->
+	<link rel="stylesheet" href="{% static 'css/style.css' %}">
+	<script src="https://kit.fontawesome.com/a076d05399.js"></script>
+	<!-- Modernizr JS -->
+	<script src="{% static 'js/modernizr-2.6.2.min.js' %}"></script>
+	<!-- FOR IE9 below -->
+	<!--[if lt IE 9]>
+	<script src="js/respond.min.js"></script>
+	<![endif]-->
+		<!-- jQuery -->
+
+<script src="https://use.fontawesome.com/7f23df0cbd.js"></script>
+
+	<script src="{% static 'js/jquery.min.js' %}"></script>
+	<!-- jQuery Easing -->
+	<script src="{% static 'js/jquery.easing.1.3.js' %}"></script>
+	<!-- Bootstrap -->
+	<script src="{% static 'js/bootstrap.min.js' %}"></script>
+	<!-- Waypoints -->
+	<script src="{% static 'js/jquery.waypoints.min.js' %}"></script>
+	<!-- Carousel -->
+	<script src="{% static 'js/owl.carousel.min.js' %}"></script>
+	<!-- countTo -->
+	<script src="{% static 'js/jquery.countTo.js' %}"></script>
+	<!-- Magnific Popup -->
+	<script src="{% static 'js/jquery.magnific-popup.min.js' %}"></script>
+	<script src="{% static 'js/magnific-popup-options.js' %}"></script>
+	<!-- Main -->
+	<script src="{% static 'js/main.js' %}"></script>
+	</head>
+	<body>
+		
+	<div class="gtco-loader"></div>
+	
+	<div id="page">
+	<nav class="gtco-nav" role="navigation">
+		<div class="gtco-container">
+			<div class="row">
+				<div class="col-xs-2">
+					<div id="gtco-logo" style="font-family: 'Courier New'"><a href="1">CLI'O</a></div>
+				</div>
+				<div class="col-xs-10 text-right menu-1">
+					<ul>
+						<li class="active"><a href="1">Home</a></li>
+						<li><a href="2">About</a></li>
+						<li class="has-dropdown">
+							<a href="3">Services</a>
+							<ul class="dropdown">
+								<li><a href="5">Book Appointment</a></li>
+								<li><a href="6">Lab Reports</a></li>
+								<li><a href="7">Blood Availablity</a></li>
+								<li><a href="8">Medical Certificate</a></li>
+							</ul>
+						</li>
+						{% if user.is_authenticated %}
+						<li class="has-dropdown">
+							<a href="3">Portals</a>
+							<ul class="dropdown">
+								<li><a href="/patient">Patient</a></li>
+								<li><a href="/doctor">Doctor</a></li>
+								<li><a href="/receptionist">Receptionist</a></li>
+							</ul>
+						</li>
+						{% endif %}
+
+						{% if user.is_authenticated %}
+						<li><a href="accounts/logout">Logout</a></li>
+						{% else %}
+						<li><a href="accounts/login">Login</a></li>
+						<li><a href="accounts/register">Register</a></li>
+						{% endif %}
+						
+					</ul>
+				</div>
+			</div>
+			
+		</div>
+	</nav>
+
+	<header id="gtco-header" class="gtco-cover" role="banner" style="background-image:url({% static 'images/img_bg_1.jpg' %});">
+		<div class="overlay"></div>
+		<div class="gtco-container">
+			<div class="row">
+				<div class="col-md-12 col-md-offset-0 text-center">
+					<div class="display-t">
+						<div class="display-tc animate-box" data-animate-effect="fadeIn">
+							<h1 style="font-family: 'Courier New' ">CLI'O</h1>
+							<h2>Portal To Connect Clinics Online</h2>
+							<p>
+								<a href="/appointment" class="btn btn-primary btn-lg">Book Appointment</a> 
+								<a href="/appointment" class="btn btn-white btn-outline btn-lg">Track Appointment</a></p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</header>
+
+	<div id="gtco-features">
+		<div class="gtco-container">
+			<div class="row">
+				<div class="col-md-4 col-sm-4">
+					<div class="feature-center animate-box" data-animate-effect="fadeIn">
+						<span class="icon">
+							<i class="icon-eye"></i>
+				<!--	<i class="fad fa-clinic-medical"></i>-->
+						</span>
+						<h3>Blood Availability</h3>
+	<!--					<p>Dignissimos asperiores vitae velit veniam totam fuga molestias accusamus alias autem provident. </p>-->
+						<p><a href="/blood" class="btn btn-primary btn-outline">Learn More</a></p>
+					</div>
+				</div>
+				<div class="col-md-4 col-sm-4">
+					<div class="feature-center animate-box" data-animate-effect="fadeIn">
+						<span class="icon">
+							<i class="icon-command"></i>
+						</span>
+						<h3>Clinics Nearby</h3>
+						<p>Clinics can come on board this platform and provide their appointment slots for online booking by patients. The system facilitates Clinics to easily manage their registration and appointment process and monitor the flow of patients. </p>
+						<p><a href="#" class="btn btn-primary btn-outline">Learn More</a></p>
+					</div>
+				</div>
+				<div class="col-md-4 col-sm-4">
+					<div class="feature-center animate-box" data-animate-effect="fadeIn">
+						<span class="icon">
+							<i class="icon-power"></i>
+					<!--	<i class="fad fa-notes-medical"></i>-->
+						</span>
+						<h3>Lab Reports</h3>
+			<!--			<p>Dignissimos asperiores vitae velit veniam totam fuga molestias accusamus alias autem provident. </p>-->
+						<p><a href="/lab" class="btn btn-primary btn-outline">Learn More</a></p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+
+	<div id="gtco-counter" class="gtco-bg gtco-cover gtco-counter" style="background-image:url({% static 'images/img_bg_2.jpg' %});">
+		<div class="overlay"></div>
+		<div class="gtco-container">
+			<div class="row">
+				<div class="display-t">
+					<div class="display-tc">
+						<div class="col-md-3 col-sm-6 animate-box">
+							<div class="feature-center">
+								<span class="icon">
+							<!--		<i class="icon-eye"></i>-->
+									<i class="fas fa-calendar-check"></i>
+								</span>
+
+								<span class="counter js-counter" data-from="0" data-to="{{appointment}}" data-speed="2500" data-refresh-interval="50">1</span>
+								<span class="counter-label">Number of Appointments</span>
+
+							</div>
+						</div>
+						<div class="col-md-3 col-sm-6 animate-box">
+							<div class="feature-center">
+								<span class="icon">
+							<!--	<i class="icon-anchor"></i>-->
+								<i class="fas fa-clinic-medical"></i>
+								</span>
+
+								<span class="counter js-counter" data-from="0" data-to="{{clinics}}" data-speed="2500" data-refresh-interval="50">1</span>
+								<span class="counter-label">Number of Clinics</span>
+							</div>
+						</div>
+						<div class="col-md-3 col-sm-6 animate-box">
+							<div class="feature-center">
+								<span class="icon">
+									<!--<i class="icon-briefcase"></i>-->
+									<i class="fas fa-user-md"></i>
+								</span>
+								<span class="counter js-counter" data-from="0" data-to="{{docto}}" data-speed="2500" data-refresh-interval="50">1</span>
+								<span class="counter-label">Number of Doctor's Online</span>
+							</div>
+						</div>
+						<div class="col-md-3 col-sm-6 animate-box">
+							<div class="feature-center">
+								<span class="icon">
+									<i class="fas fa-certificate"></i>
+								</span>
+
+								<span class="counter js-counter" data-from="0" data-to="{{certificates}}" data-speed="2500" data-refresh-interval="50">1</span>
+								<span class="counter-label">Number of Certificate Issued</span>
+
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div id="gtco-testimonial">
+		<div class="gtco-container">
+			<div class="row animate-box">
+				<div class="col-md-8 col-md-offset-2 text-center gtco-heading">
+					<h2>Testimonial</h2>
+				</div>
+			</div>
+			<div class="row animate-box">
+				
+			
+				<div class="owl-carousel owl-carousel-fullwidth ">
+					<div class="item">
+						<div class="testimony-slide active text-center">
+							<figure>
+								<img src="{% static 'images/person_1.jpg' %}" alt="user">
+							</figure>
+							<span>Jean Doe, via <a href="#" class="twitter">Twitter</a></span>
+							<blockquote>
+								<p>&ldquo;Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.&rdquo;</p>
+							</blockquote>
+						</div>
+					</div>
+					<div class="item">
+						<div class="testimony-slide active text-center">
+							<figure>
+								<img src="{% static 'images/person_2.jpg' %}" alt="user">
+							</figure>
+							<span>John Doe, via <a href="#" class="twitter">Twitter</a></span>
+							<blockquote>
+								<p>&ldquo;Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.&rdquo;</p>
+							</blockquote>
+						</div>
+					</div>
+					<div class="item">
+						<div class="testimony-slide active text-center">
+							<figure>
+								<img src="{5 static 'images/person_3.jpg' %}" alt="user">
+							</figure>
+							<span>John Doe, via <a href="#" class="twitter">Twitter</a></span>
+							<blockquote>
+								<p>&ldquo;Far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.&rdquo;</p>
+							</blockquote>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div id="gtco-services">
+		<div class="gtco-container">
+			
+			<div class="row animate-box">
+				<div class="col-md-8 col-md-offset-2 text-center gtco-heading">
+					<h2>What We Offer</h2>
+					<p>Now getting an OPD appointment, lab reports and blood availability in any Clinic has become online & easy</p>
+				</div>
+			</div>
+
+			<div class="row animate-box">
+				
+				<div class="gtco-tabs">
+					<ul class="gtco-tab-nav">
+						<li class="active"><a href="#" data-tab="1"><span class="icon visible-xs"><i class="icon-command"></i></span><span class="hidden-xs">Book Appointment Now</span></a></li>
+						<li><a href="#" data-tab="2"><span class="icon visible-xs"><i class="icon-bar-graph"></i></span><span class="hidden-xs">Test Reports</span></a></li>
+						<li><a href="#" data-tab="3"><span class="icon visible-xs"><i class="icon-bag"></i></span><span class="hidden-xs">Blood Availability</span></a></li>
+						<li><a href="#" data-tab="4"><span class="icon visible-xs"><i class="icon-box"></i></span><span class="hidden-xs">Medical Certificate</span></a></li>
+					</ul>
+
+					<!-- Tabs -->
+					<div class="gtco-tab-content-wrap">
+
+						<div class="gtco-tab-content tab-content active" data-tab-content="1">
+							<div class="col-md-6">
+								<div class="gtco-video gtco-bg" style="background-image: url(images/1.png) ; ">
+									<img src="{% static 'images/1.png' %}">
+						<!--			<div class="overlay"></div>-->
+								</div>
+							</div>
+							<div class="col-md-6">
+								<h2>Book Appointment</h2>
+								<p>Clinics can come on board this platform and provide their appointment slots for online booking by patients. The system facilitates Clinics to easily manage their registration and appointment process and monitor the flow of patients.</p>
+
+				<!--				<p>Ullam dolorum iure dolore dicta fuga ipsa velit veritatis molestias totam fugiat soluta accusantium omnis quod similique placeat at. Dolorum ducimus libero fuga molestiae asperiores obcaecati corporis sint illo facilis.</p>-->
+
+								<div class="row">
+									<div class="col-md-6">
+										<h2 class="uppercase">Keep it simple</h2>
+										<p>Ullam dolorum iure dolore dicta fuga ipsa velit veritatis</p>
+									</div>
+									<div class="col-md-6">
+										<h2 class="uppercase">Less is more</h2>
+										<p>Ullam dolorum iure dolore dicta fuga ipsa velit veritatis</p>
+									</div>
+								</div>
+
+							</div>
+						</div>
+
+						<div class="gtco-tab-content tab-content" data-tab-content="2">
+							<div class="col-md-6 col-md-push-6">
+								<div class="gtco-video gtco-bg" style="background-image: url(images/3.jpg); ">
+							<!--		<div class="overlay"></div>-->
+								</div>
+							</div>
+							<div class="col-md-6 col-md-pull-6">
+								<h2>Test Reports</h2>
+					<!--			<p>Paragraph placeat quis fugiat provident veritatis quia iure a debitis adipisci dignissimos consectetur magni quas eius nobis reprehenderit soluta eligendi quo reiciendis fugit? Veritatis tenetur odio delectus quibusdam officiis est.</p>
+
+								<p>Ullam dolorum iure dolore dicta fuga ipsa velit veritatis molestias totam fugiat soluta accusantium omnis quod similique placeat at. Dolorum ducimus libero fuga molestiae asperiores obcaecati corporis sint illo facilis.</p>-->
+
+								<div class="row">
+									<div class="col-md-6">
+										<h2 class="uppercase">Ready to use</h2>
+										<p>Ullam dolorum iure dolore dicta fuga ipsa velit veritatis</p>
+									</div>
+									<div class="col-md-6">
+										<h2 class="uppercase">100% Satisfaction</h2>
+										<p>Ullam dolorum iure dolore dicta fuga ipsa velit veritatis</p>
+									</div>
+								</div>
+
+							</div>
+						</div>
+
+						<div class="gtco-tab-content tab-content" data-tab-content="3">
+							<div class="col-md-6 col-md-push-6">
+								<div class="gtco-video gtco-bg" style="background-image: url(images/2.jpg); ">
+								<!--	<div class="overlay"></div>-->
+								</div>
+							</div>
+							<div class="col-md-6 col-md-pull-6">
+								<div class="feature-left animate-box" data-animate-effect="fadeInLeft">
+									<span class="icon">
+										<i class="icon-check"></i>
+									</span>
+									<div class="feature-copy">
+										<h3>Blood Availability</h3>
+										<p>Facilis ipsum reprehenderit nemo molestias. Aut cum mollitia reprehenderit.</p>
+									</div>
+								</div>
+
+								<div class="feature-left animate-box" data-animate-effect="fadeInLeft">
+									<span class="icon">
+										<i class="icon-check"></i>
+									</span>
+									<div class="feature-copy">
+										<h3>Fully Responsive</h3>
+										<p>Facilis ipsum reprehenderit nemo molestias. Aut cum mollitia reprehenderit.</p>
+									</div>
+								</div>
+
+								<div class="feature-left animate-box" data-animate-effect="fadeInLeft">
+									<span class="icon">
+										<i class="icon-check"></i>
+									</span>
+									<div class="feature-copy">
+										<h3>Ready To Use</h3>
+										<p>Facilis ipsum reprehenderit nemo molestias. Aut cum mollitia reprehenderit.</p>
+									</div>
+								</div>
+								
+								
+							</div>
+						</div>
+
+						<div class="gtco-tab-content tab-content" data-tab-content="4">
+							<div class="col-md-6">
+								<div class="gtco-video gtco-bg" style="background-image: url({% static 'images/4.jpg' %}); ">
+									<div class="verlay"></div>
+								</div>
+							</div>
+							<div class="col-md-6">
+								<h2>Medical Certificate</h2>
+						<!--		<p>Paragraph placeat quis fugiat provident veritatis quia iure a debitis adipisci dignissimos consectetur magni quas eius nobis reprehenderit soluta eligendi quo reiciendis fugit? Veritatis tenetur odio delectus quibusdam officiis est.</p>
+
+								<p>Ullam dolorum iure dolore dicta fuga ipsa velit veritatis molestias totam fugiat soluta accusantium omnis quod similique placeat at. Dolorum ducimus libero fuga molestiae asperiores obcaecati corporis sint illo facilis.</p>
+-->
+								<div class="row">
+									<div class="col-md-6">
+										<h2 class="uppercase">Pixel perfect</h2>
+										<p>Ullam dolorum iure dolore dicta fuga ipsa velit veritatis</p>
+									</div>
+									<div class="col-md-6">
+										<h2 class="uppercase">User Interface Expert</h2>
+										<p>Ullam dolorum iure dolore dicta fuga ipsa velit veritatis</p>
+									</div>
+								</div>
+							</div>
+						</div>
+
+					</div>
+
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<div id="gtco-subscribe">
+		<div class="gtco-container">
+
+			<div class="row copyright">
+				<div class="col-md-12">
+				<!--	<p class="pull-right">
+						<ul class="gtco-social-icons pull-right">
+							<li><a href="#"><i class="icon-twitter"></i></a></li>
+							<li><a href="#"><i class="icon-facebook"></i></a></li>
+							<li><a href="#"><i class="icon-linkedin"></i></a></li>
+							<li><a href="#"><i class="icon-dribbble"></i></a></li>
+						</ul>
+					</p>-->
+				</div>
+			</div>
+			<div class="row animate-box">
+				<div class="col-md-8 col-md-offset-2 text-center gtco-heading">
+					<h2 style="font-family: 'Courier New'">Locate Clinic Nearby</h2>
+					<p></p>
+				</div>
+			</div>
+			<div class="row animate-box">
+				<div class="col-md-12">
+					<form action="locate" method="POST" class="form-inline">{% csrf_token %}
+						<div class="col-md-4 col-sm-4">
+							<div class="form-group">
+								<label for="name" class="sr-only">City</label>
+								<input type="text" name="city" class="form-control" id="email" placeholder="City">
+							</div>
+						</div>
+						<div class="col-md-4 col-sm-4">
+					<div class="form-group">
+								<label for="name" class="sr-only">Pincode</label>
+								<input type="number" name="pincode" class="form-control" id="name" placeholder="Pincode">
+							</div>
+						</div>
+						<div class="col-md-4 col-sm-4">
+							<button type="submit" class="btn btn-default btn-block">Search</button>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<footer id="gtco-footer" role="contentinfo">
+		<div class="gtco-container">
+			<div class="row row-pb-md">
+				<div class="col-md-2 col-sm-4 col-xs-6 ">
+					<ul class="gtco-footer-links">
+						<li><a href="#">About</a></li>
+						<li><a href="#">Help</a></li>
+						<li><a href="#">Contact</a></li>
+						<li><a href="#">Terms</a></li>
+						<li><a href="#">Meetups</a></li>
+					</ul>
+				</div>
+				<div class="col-md-2 col-sm-4 col-xs-6">
+					<ul class="gtco-footer-links">
+						<li><a href="#">Creative Design</a></li>
+						<li><a href="#">Branding</a></li>
+						<li><a href="#">Illustration</a></li>
+						<li><a href="#">Subscribe</a></li>
+						<li><a href="#">Monthly Event</a></li>
+					</ul>
+				</div>
+				
+				<div class="clearfix visible-xs-block"></div>
+
+				<div class="col-md-2 col-sm-4 col-xs-6">
+					<ul class="gtco-footer-links">
+						<li><a href="#">About</a></li>
+						<li><a href="#">Help</a></li>
+						<li><a href="#">Contact</a></li>
+						<li><a href="#">Terms</a></li>
+						<li><a href="#">Meetups</a></li>
+					</ul>
+				</div>
+
+				<div class="clearfix visible-sm-block"></div>
+
+				<div class="col-md-2 col-sm-4 col-xs-6">
+					<ul class="gtco-footer-links">
+						<li><a href="#">Shop</a></li>
+						<li><a href="#">Privacy</a></li>
+						<li><a href="#">Testimonials</a></li>
+						<li><a href="#">Handbook</a></li>
+						<li><a href="#">Held Desk</a></li>
+					</ul>
+				</div>
+
+				<div class="clearfix visible-xs-block"></div>
+
+				<div class="col-md-2 col-sm-4 col-xs-6">
+					<ul class="gtco-footer-links">
+						<li><a href="#">Find Designers</a></li>
+						<li><a href="#">Find Deelopers</a></li>
+						<li><a href="#">Teams</a></li>
+						<li><a href="#">Advertise</a></li>
+						<li><a href="#">API</a></li>
+					</ul>
+				</div>
+
+				<div class="col-md-2 col-sm-4 col-xs-6">
+					<ul class="gtco-footer-links">
+						<li><a href="#">About</a></li>
+						<li><a href="#">Help</a></li>
+						<li><a href="#">Contact</a></li>
+						<li><a href="#">Terms</a></li>
+						<li><a href="#">Meetups</a></li>
+					</ul>
+				</div>
+
+			</div>
+
+			<div class="row copyright">
+				<div class="col-md-12">
+					<p class="pull-left">
+				<p class="pull-right">
+						<ul class="gtco-social-icons pull-right">
+							<li><a href="#"><i class="icon-twitter"></i></a></li>
+							<li><a href="#"><i class="icon-facebook"></i></a></li>
+							<li><a href="#"><i class="icon-linkedin"></i></a></li>
+							<li><a href="#"><i class="icon-dribbble"></i></a></li>
+						</ul>
+					</p>
+				</div>
+			</div>
+
+		</div>
+	</footer>
+	</div>
+
+	<div class="gototop js-top">
+		<a href="#" class="js-gotop"><i class="icon-arrow-up"></i></a>
+	</div>
+	</body>
+</html>

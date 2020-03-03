@@ -1,0 +1,48 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Slot Timings</title>
+    <link rel="stylesheet" href="{% static 'css/styleapp.css' %}">
+  </head>
+  <body>
+      <div class="contact-form">
+        {% for message in messages %}
+        <h4>{{message}}</h4>
+        {% endfor %}
+        <h3> Select Your Appointment Timing</h3>
+        <a href="1"><button class="btn">9:00 AM - 9:15 AM</button></a> 
+        <a href="2"><button class="btn">9:15 AM - 9:30 AM</button></a> 
+        <a href="3"><button class="btn">9:30 AM - 9:45 AM</button></a>
+        <a href="4"><button class="btn">9:45AM - 10:00AM</button></a>
+        <a href="5"><button class="btn">10:00AM-10:15AM</button></a>
+        <a href="6"><button class="btn">10:15AM-10:30AM</button></a> 
+        <a href="7"><button class="btn">10:30AM-10:45AM</button></a> 
+        <a href="8"><button class="btn">10:45AM-11:00AM</button></a>
+        <a href="9"><button class="btn">11:00AM - 11:15AM</button></a> 
+        <a href="10"><button class="btn">11:15AM - 11:30AM</button></a> 
+        <a href="11"><button class="btn">11:30AM - 11:45AM</button></a>
+        <a href="12"><button class="btn">11:45AM-12:00PM</button></a> 
+        <a href="13"><button class="btn">1:30PM - 1:45PM</button></a> 
+        <a href="14"><button class="btn">1:45PM - 2:00PM</button></a>
+        <a href="15"><button class="btn">2:00PM - 2:15PM</button></a> 
+        <a href="16"><button class="btn">2:15PM - 2:30PM</button></a> 
+        <a href="17"><button class="btn">2:30PM - 2:45PM</button></a>
+        <a href="18"><button class="btn">2:45PM - 3:00PM</button></a> 
+        <a href="19"><button class="btn">3:00PM - 3:15PM</button></a> 
+        <a href="20"><button class="btn">3:15PM - 3:30PM</button></a>
+        <a href="21"><button class="btn">3:30PM - 3:45PM</button></a> 
+        <a href="22"><button class="btn">3:45PM - 4:00PM</button></a> 
+        <a href="23"><button class="btn">5:00PM - 5:15PM</button></a>
+        <a href="24"><button class="btn">5:15PM - 5:30PM</button></a>
+        <a href="25"><button class="btn">5:30PM - 5:45PM</button></a> 
+        <a href="26"><button class="btn">5:45PM - 6:00PM</button></a> 
+        <a href="27"><button class="btn">6:15PM - 6:30PM</button></a>
+        <a href="28"><button class="btn">6:30PM - 6:45PM</button></a> 
+        <a href="29"><button class="btn">6:45PM - 7:00PM</button></a> 
+       
+      </div>
+   
+  </body>
+</html>

@@ -1,0 +1,294 @@
+{% load static %}
+<!DOCTYPE HTML>
+
+<html>
+	<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>CLI'O</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="Free HTML5 Website Template by FreeHTML5.co" />
+	<meta name="keywords" content="free website templates, free html5, free template, free bootstrap, free website template, html5, css3, mobile first, responsive" />
+	<meta name="author" content="FreeHTML5.co" />
+
+
+	<meta property="og:title" content=""/>
+	<meta property="og:image" content=""/>
+	<meta property="og:url" content=""/>
+	<meta property="og:site_name" content=""/>
+	<meta property="og:description" content=""/>
+	<meta name="twitter:title" content="" />
+	<meta name="twitter:image" content="" />
+	<meta name="twitter:url" content="" />
+	<meta name="twitter:card" content="" />
+
+	<link href='https://fonts.googleapis.com/css?family=Raleway:400,300,600,400italic,700' rel='stylesheet' type='text/css'>
+	
+	
+	<link rel="stylesheet" href="{% static 'css/animate.css'%}">
+	
+	<link rel="stylesheet" href="{% static 'css/icomoon.css'%}">
+	
+	<link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+
+	
+	<link rel="stylesheet" href="{% static 'css/magnific-popup.css' %}">
+
+	<link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %}">
+	<link rel="stylesheet" href="{% static 'css/owl.theme.default.min.css' %}">
+
+
+	<link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+	
+	<script src="{% static 'js/modernizr-2.6.2.min.js' %}"></script>
+
+	</head>
+	<body>
+		
+	<div class="gtco-loader"></div>
+	
+	<div id="page">
+	<nav class="gtco-nav" role="navigation">
+		<div class="gtco-container">
+			<div class="row">
+				<div class="col-xs-2">
+					<div id="gtco-logo" style="font-family: 'Courier New'"><a href="1">CLI'O</a></div>
+				</div>
+				<div class="col-xs-10 text-right menu-1">
+					<ul>
+						<li><a href="1">Home</a></li>
+						<li ><a href="2">About</a></li>
+						<li class="has-dropdown">
+							<a href="3">Services</a>
+							<ul class="dropdown">
+								<li ><a href="4">Book Appointments</a></li>
+								<li><a href="5">Lab Reports</a></li>
+								<li><a href="6">Blood Availability</a></li>
+								<li><a href="7">Medical Certificate</a></li>
+							</ul>
+						</li>
+					
+						
+					</ul>
+				</div>
+			</div>
+			
+		</div>
+	</nav>
+
+	<header id="gtco-header" class="gtco-cover gtco-cover-sm" role="banner" style="background-image:url({% static 'images/img_bg_1.jpg'%});">
+		<div class="overlay"></div>
+		<div class="gtco-container">
+			<div class="row">
+				<div class="col-md-8 col-md-offset-2 text-center">
+					<div class="display-t">
+						<div class="display-tc animate-box" data-animate-effect="fadeIn">
+							<h1>Appointments</h1>
+							
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</header>
+	
+	
+	<div class	="gtco-section">
+		<div class="gtco-container">
+			<div class="row animate-box">
+				<div class="col-md-8 col-md-offset-2 text-center gtco-heading">
+					<h2>Our Facilities</h2>
+				</div>
+			</div>
+			<div class="row animate-box">
+				<div class="col-md-6">
+					<div class="feature-left animate-box" data-animate-effect="fadeInLeft">
+						<span class="icon">
+							<i class="icon-check"></i>
+						</span>
+						<div class="feature-copy">
+							<h1>Appointment Booking</h1>
+							<p>Patient can search doctor by doctor’s degree or specification, doctor’s name or clinic’s name. Patient can utilize his/her time rather than going at early in the morning to take appointment and wait till the number came. Secret information of patient is not visible to other patient; privacy of the patient is maintained. </p>
+							{% if user.is_authenticated %}
+							<a href="book"style="color:white;"><button class="btn btn-primary btn-lg">Click here to book an appointment</button></a>
+							{% else %}
+							<a href="accounts/login"><button class="btn btn-primary btn-lg" >Login</button></a>
+							<a href="accounts/register"><button class="btn btn-secondary btn-lg">Register</button></a>
+							{% endif %}
+						</div>
+					</div>
+
+			
+				</div>	
+				<div class="col-md-6">
+				
+
+					<div class="feature-left animate-box" data-animate-effect="fadeInLeft">
+						<span class="icon">
+							<i class="icon-check"></i>
+						</span>
+						<div class="feature-copy">
+							<h1>Track Appointment</h1>
+							<p>Doctor can see the personal information and allergic information of patient, and depending upon the allergy, doctor can give him prescription. Doctor can also view the patient history. There is no need of paper to keep record of patient.</p>
+							
+							{% if user.is_authenticated %}
+							<a href="track"><button class="btn btn-primary btn-lg">Click here to Track your appointment</button></a>
+							{% else %}
+							<a href="accounts/login"><button class="btn btn-primary btn-lg">Login</button></a>
+							<a href="accounts/register"><button class="btn btn-secondary btn-lg" href="accounts/register">Register</button></a>
+							{% endif %}
+						</div>
+					</div>
+
+				
+				</div>
+			</div>
+		</div>
+	</div>
+	
+
+<!--	<div id="gtco-subscribe">
+		<div class="gtco-container">
+			<div class="row animate-box">
+				<div class="col-md-8 col-md-offset-2 text-center gtco-heading">
+					<h2>Locate Clinic Nearby</h2>
+					<p></p>
+				</div>
+			</div>
+			<div class="row animate-box">
+				<div class="col-md-12">
+					<form class="form-inline">
+						<div class="col-md-4 col-sm-4">
+							<div class="form-group">
+								<label for="email" class="sr-only">City</label>
+								<input type="email" class="form-control" id="email" placeholder="City">
+							</div>
+						</div>
+						<div class="col-md-4 col-sm-4">
+							<div class="form-group">
+								<label for="name" class="sr-only">Pincode</label>
+								<input type="text" class="form-control" id="name" placeholder="Pincode">
+							</div>
+						</div>
+						<div class="col-md-4 col-sm-4">
+							<button type="submit" class="btn btn-default btn-block">Search</button>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<footer id="gtco-footer" role="contentinfo">
+		<div class="gtco-container">
+			<div class="row row-pb-md">
+				<div class="col-md-2 col-sm-4 col-xs-6 ">
+					<ul class="gtco-footer-links">
+						<li><a href="#">About</a></li>
+						<li><a href="#">Help</a></li>
+						<li><a href="#">Contact</a></li>
+						<li><a href="#">Terms</a></li>
+						<li><a href="#">Meetups</a></li>
+					</ul>
+				</div>
+				<div class="col-md-2 col-sm-4 col-xs-6">
+					<ul class="gtco-footer-links">
+						<li><a href="#">Creative Design</a></li>
+						<li><a href="#">Branding</a></li>
+						<li><a href="#">Illustration</a></li>
+						<li><a href="#">Subscribe</a></li>
+						<li><a href="#">Monthly Event</a></li>
+					</ul>
+				</div>
+				
+				<div class="clearfix visible-xs-block"></div>
+
+				<div class="col-md-2 col-sm-4 col-xs-6">
+					<ul class="gtco-footer-links">
+						<li><a href="#">About</a></li>
+						<li><a href="#">Help</a></li>
+						<li><a href="#">Contact</a></li>
+						<li><a href="#">Terms</a></li>
+						<li><a href="#">Meetups</a></li>
+					</ul>
+				</div>
+
+				<div class="clearfix visible-sm-block"></div>
+
+				<div class="col-md-2 col-sm-4 col-xs-6">
+					<ul class="gtco-footer-links">
+						<li><a href="#">Shop</a></li>
+						<li><a href="#">Privacy</a></li>
+						<li><a href="#">Testimonials</a></li>
+						<li><a href="#">Handbook</a></li>
+						<li><a href="#">Held Desk</a></li>
+					</ul>
+				</div>
+
+				<div class="clearfix visible-xs-block"></div>
+
+				<div class="col-md-2 col-sm-4 col-xs-6">
+					<ul class="gtco-footer-links">
+						<li><a href="#">Find Designers</a></li>
+						<li><a href="#">Find Deelopers</a></li>
+						<li><a href="#">Teams</a></li>
+						<li><a href="#">Advertise</a></li>
+						<li><a href="#">API</a></li>
+					</ul>
+				</div>
+
+				<div class="col-md-2 col-sm-4 col-xs-6">
+					<ul class="gtco-footer-links">
+						<li><a href="#">About</a></li>
+						<li><a href="#">Help</a></li>
+						<li><a href="#">Contact</a></li>
+						<li><a href="#">Terms</a></li>
+						<li><a href="#">Meetups</a></li>
+					</ul>
+				</div>
+				
+			</div>
+
+			<div class="row copyright">
+				<div class="col-md-12">
+	
+					<p class="pull-right">
+						<ul class="gtco-social-icons pull-right">
+							<li><a href="#"><i class="icon-twitter"></i></a></li>
+							<li><a href="#"><i class="icon-facebook"></i></a></li>
+							<li><a href="#"><i class="icon-linkedin"></i></a></li>
+							<li><a href="#"><i class="icon-dribbble"></i></a></li>
+						</ul>
+					</p>
+				</div>
+			</div>-->
+
+		</div>
+	</footer>
+	</div>
+
+	<div class="gototop js-top">
+		<a href="#" class="js-gotop"><i class="icon-arrow-up"></i></a>
+	</div>
+	
+	
+	<script src="{% static 'js/jquery.min.js' %}"></script>
+	
+	<script src="{% static 'js/jquery.easing.1.3.js' %}"></script>
+	
+	<script src="{% static 'js/bootstrap.min.js'%}"></script>
+
+	<script src="{% static 'js/jquery.waypoints.min.js'%}"></script>
+
+	<script src="{% static 'js/owl.carousel.min.js'%}"></script>
+
+	<script src="{% static 'js/jquery.countTo.js' %}"></script>
+	
+	<script src="{% static 'js/jquery.magnific-popup.min.js'%}"></script>
+	<script src="{% static 'js/magnific-popup-options.js'%}"></script>
+	
+	<script src="{% static 'js/main.js'%}"></script>
+
+	</body>
+</html>

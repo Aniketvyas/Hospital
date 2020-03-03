@@ -1,0 +1,27 @@
+body
+{
+	margin: 0;
+	padding: 0;
+	font-family: sans-serif;
+	overflow: visible;
+}
+.flexslider
+{
+	width: 80%;
+	margin: 4% 10% 5% 10%;
+}
+.flexslider img
+{
+	width: 100%;
+}
+.flex-caption
+{
+	width: 100%;
+	position: relative;
+	margin-top: -40%;
+}
+.flex-caption h1
+{
+	text-align: left;
+	font-size: 10vw;
+}
