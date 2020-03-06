@@ -3,7 +3,7 @@ from django.http import HttpResponse
 from django.contrib import messages
 from django.core.mail import send_mail
 from django.contrib.auth.models import User , auth
-from hos.models import doctors , appointments, patient , receptionist , DaySchedule
+from hos.models import doctors , appointments, patient , receptionist , DaySchedule , laboratory
 from hos.models import receptionist
 from django.core.mail import send_mail
 from django.conf import settings
@@ -42,6 +42,13 @@ def index(request):
                 return redirect('/receptionist')
             else:
                 messages.info(request,'Receptionist Does Not Exist')
+                return redirect('/accounts/login')
+        elif type=="laboratory" and user is not None:
+            if laboratory.objects.filter(id=username):
+                auth.login(request,user)
+                return redirect('/laboratory')
+            else:
+                messages.info(request,'invalid credentials')
                 return redirect('/accounts/login')
         else:
             print('else')

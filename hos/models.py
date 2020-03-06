@@ -77,3 +77,16 @@ class DaySchedule(models.Model):
     second_time_slot_to = models.TimeField()
     third_time_slot_from = models.TimeField()
     third_time_slot_to = models.TimeField()
+
+
+class labReports(models.Model):
+    patient_id = models.EmailField()
+    reports = models.FileField(upload_to=None)
+    upload_date = models.DateField()
+    upload_time = models.TimeField()
+
+class laboratory(models.Model):
+    id = models.EmailField(primary_key=True)
+    name = models.CharField(max_length=20)
+    address = models.CharField(max_length=30)
+    contact_no  = models.BigIntegerField()

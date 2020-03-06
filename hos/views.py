@@ -159,7 +159,11 @@ def track(request):
         messages.error(request,'You Must Login to continue')
         return redirect('/accounts/login')
 
+def LabReports(request):
+    return render(request,'dash_lab.html')
 
+def laboratory(request):
+    return render(request,'dash_laboratory.html')
     
 
 def timeslot(request,id):
