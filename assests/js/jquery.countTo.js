@@ -18,8 +18,8 @@
 
   CountTo.DEFAULTS = {
     from: 0,               // the number the element should start at
-    to: 0,                 // the number the element should end at
-    speed: 1000,           // how long it should take to count between the target numbers
+    to: 30,                 // the number the element should end at
+    speed: 10000,           // how long it should take to count between the target numbers
     refreshInterval: 100,  // how often the element should be updated
     decimals: 0,           // the number of decimal places to show
     formatter: formatter,  // handler for formatting the value before rendering
