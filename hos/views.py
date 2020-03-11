@@ -109,7 +109,6 @@ def book(request):
             c_date = dt.datetime.now().strftime('%Y-%m-%d')
             db=appointments(
                 doctor_id=doc_id,
-                pincode=pincode,
                 patient_appointment_id=app_id,
                 patient_phone=phn_no ,
                 patient_email = a,
@@ -118,7 +117,8 @@ def book(request):
                 patient_gender=gender,
                 slot_date=slot_date,
                 created_at=c_date,
-                udated_at=c_date)
+                udated_at=c_date,
+                status="pending")
             print("migration")
             db.save()
             print("db saved")
