@@ -21,7 +21,7 @@ def index(request):
         user= auth.authenticate(username=username ,password=passw)
         print('authenticated',user is not None)
         if type =='patient' and user is not None:
-            if patient.objects.filter(id=username).exists():
+            if patient.objects.filter(patient_id=username).exists():
                 print("user is not none")
                 auth.login(request,user)
                 return redirect('/patient/')
@@ -29,7 +29,7 @@ def index(request):
                 messages.info(request,'Patient Does Not Exist')
                 return redirect('/accounts/login')
         elif type =='doctor' and user is not None:
-            if doctors.objects.filter(id=username):
+            if doctors.objects.filter(doctor_id=username):
                 print("sdf")
                 auth.login(request,user)
                 return redirect('/doctor')
@@ -44,7 +44,7 @@ def index(request):
                 messages.info(request,'Receptionist Does Not Exist')
                 return redirect('/accounts/login')
         elif type=="laboratory" and user is not None:
-            if laboratory.objects.filter(id=username):
+            if laboratory.objects.filter(lab_id=username):
                 auth.login(request,user)
                 return redirect('/laboratory')
             else:

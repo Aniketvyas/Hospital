@@ -86,7 +86,6 @@ def book(request):
         pincode = request.POST['pincode']
         a = request.POST['email']
         gender = request.POST['gender']
-        phn_no = request.POST['phn_no']
         slot_date = request.POST['date']
         doctor_name=request.POST['doc_name']
         request.session['doctor_name']=doctor_name
@@ -110,7 +109,6 @@ def book(request):
             db=appointments(
                 doctor_id=doc_id,
                 patient_appointment_id=app_id,
-                patient_phone=phn_no ,
                 patient_email = a,
                 patient_name = name,
                 patient_age=age,
@@ -197,7 +195,7 @@ def timeslot(request,id):
             else:
                 appointments.objects.filter(patient_appointment_id = id1).update(slot_time=time,status="pending")
                 print("user",u)
-                if patient.objects.filter(id=u):
+                if patient.objects.filter(patinet_id=u):
                     return redirect('/patient')
                 elif receptionist.objects.filter(recep_id=u):
                     return redirect('/receptionist')
@@ -212,7 +210,7 @@ def timeslot(request,id):
                 return redirect("/patient/timeslot/50")
             else:
                 appointments.objects.filter(patient_appointment_id = id1).update(slot_time=time,status="pending")
-                if patient.objects.filter(id=u):
+                if patient.objects.filter(patient_id=u):
                     return redirect('/patient')
                     
                 else:
@@ -226,7 +224,7 @@ def timeslot(request,id):
             else:
                 appointments.objects.filter(patient_appointment_id = id1).update(slot_time=time,status="pending")
                 print("entry Done")
-                if patient.objects.filter(id=u):
+                if patient.objects.filter(patient_id=u):
                     return redirect('/patient')
                 else:
                     return redirect('/receptionist')
@@ -238,7 +236,7 @@ def timeslot(request,id):
                 return redirect("/patient/timeslot/50")
             else:
                 appointments.objects.filter(patient_appointment_id = id1).update(slot_time=time,status="pending")
-                if patient.objects.filter(id=u).exists():
+                if patient.objects.filter(patient_id=u).exists():
                     return redirect('/patient')
              
                 else:
@@ -250,7 +248,7 @@ def timeslot(request,id):
                 messages.info(request,'time is already taken')
                 return redirect("/patient/timeslot/50")
             else:
-                if patient.objects.filter(id=u).exists():
+                if patient.objects.filter(patient_id=u).exists():
                     return redirect('/patient')
              
                 else:
@@ -263,7 +261,7 @@ def timeslot(request,id):
                 return redirect("/patient/timeslot/50")
             else:
                 appointments.objects.filter(patient_appointment_id = id1).update(slot_time=time,status="pending")
-                if patient.objects.filter(id=u).exists():
+                if patient.objects.filter(patient_id=u).exists():
                     return redirect('/patient')
              
                 else:
@@ -276,7 +274,7 @@ def timeslot(request,id):
                 return redirect("/patient/timeslot/50")
             else:
                 appointments.objects.filter(patient_appointment_id = id1).update(slot_time=time,status="pending")
-                if patient.objects.filter(id=u).exists():
+                if patient.objects.filter(patient_id=u).exists():
                     return redirect('/patient')
              
                 else:
@@ -289,7 +287,7 @@ def timeslot(request,id):
                 return redirect("/patient/timeslot/50")
             else:
                 appointments.objects.filter(patient_appointment_id = id1).update(slot_time=time,status="pending")
-                if patient.objects.filter(id=u).exists():
+                if patient.objects.filter(patient_id=u).exists():
                     return redirect('/patient')
              
                 else:
@@ -302,7 +300,7 @@ def timeslot(request,id):
                 return redirect("/patient/timeslot/50")
             else:
                 appointments.objects.filter(patient_appointment_id = id1).update(slot_time=time,status="pending")
-                if patient.objects.filter(id=u).exists():
+                if patient.objects.filter(patient_id=u).exists():
                     return redirect('/patient')
              
                 else:
@@ -315,7 +313,7 @@ def timeslot(request,id):
                 return redirect("/patient/timeslot/50")
             else:
                 appointments.objects.filter(patient_appointment_id = id1).update(slot_time=time,status="pending")
-                if patient.objects.filter(id=u).exists():
+                if patient.objects.filter(patient_id=u).exists():
                     return redirect('/patient')
              
                 else:
@@ -328,7 +326,7 @@ def timeslot(request,id):
                 return redirect("/patient/timeslot/50")
             else:
                 appointments.objects.filter(patient_appointment_id = id1).update(slot_time=time,status="pending")
-                if patient.objects.filter(id=u).exists():
+                if patient.objects.filter(patient_id=u).exists():
                     return redirect('/patient')
              
                 else:
@@ -341,7 +339,7 @@ def timeslot(request,id):
                 return redirect("/patient/timeslot/50")
             else:
                 appointments.objects.filter(patient_appointment_id = id1).update(slot_time=time,status="pending")
-                if patient.objects.filter(id=u).exists():
+                if patient.objects.filter(patient_id=u).exists():
                     return redirect('/patient')
              
                 else:
@@ -354,7 +352,7 @@ def timeslot(request,id):
                 return redirect("/patient/timeslot/50")
             else:
                 appointments.objects.filter(patient_appointment_id = id1).update(slot_time=time,status="pending")
-                if patient.objects.filter(id=u).exists():
+                if patient.objects.filter(patient_id=u).exists():
                     return redirect('/patient')
              
                 else:
@@ -367,7 +365,7 @@ def timeslot(request,id):
                 return redirect("/patient/timeslot/50")
             else:
                 appointments.objects.filter(patient_appointment_id = id1).update(slot_time=time,status="pending")
-                if patient.objects.filter(id=u).exists():
+                if patient.objects.filter(patient_id=u).exists():
                     return redirect('/patient')
              
                 else:
@@ -380,7 +378,7 @@ def timeslot(request,id):
                 return redirect("/patient/timeslot/50")
             else:
                 appointments.objects.filter(patient_appointment_id = id1).update(slot_time=time,status="pending")
-                if patient.objects.filter(id=u).exists():
+                if patient.objects.filter(patient_id=u).exists():
                     return redirect('/patient')
              
                 else:
@@ -395,7 +393,7 @@ def timeslot(request,id):
                 return redirect("/patient/timeslot/50")
             else:
                 appointments.objects.filter(patient_appointment_id = id1).update(slot_time=time,status="pending")
-                if patient.objects.filter(id=u).exists():
+                if patient.objects.filter(patient_id=u).exists():
                     return redirect('/patient')
              
                 else:
@@ -408,7 +406,7 @@ def timeslot(request,id):
                 return redirect("/patient/timeslot/50")
             else:
                 appointments.objects.filter(patient_appointment_id = id1).update(slot_time=time,status="pending")
-                if patient.objects.filter(id=u).exists():
+                if patient.objects.filter(patient_id=u).exists():
                     return redirect('/patient')
              
                 else:
@@ -421,7 +419,7 @@ def timeslot(request,id):
                 return redirect("/patient/timeslot/50")
             else:
                 appointments.objects.filter(patient_appointment_id = id1).update(slot_time=time,status="pending")
-                if patient.objects.filter(id=u).exists():
+                if patient.objects.filter(patient_id=u).exists():
                     return redirect('/patient')
              
                 else:
@@ -436,7 +434,7 @@ def timeslot(request,id):
             else:
                 print("esle")
                 appointments.objects.filter(patient_appointment_id = id1).update(slot_time=time,status="pending")
-                if patient.objects.filter(id=u).exists():
+                if patient.objects.filter(patient_id=u).exists():
                     return redirect('/patient')
              
                 else:
@@ -449,7 +447,7 @@ def timeslot(request,id):
                 return redirect("/patient/timeslot/50")
             else:
                 appointments.objects.filter(patient_appointment_id = id1).update(slot_time=time,status="pending")
-                if patient.objects.filter(id=u).exists():
+                if patient.objects.filter(patient_id=u).exists():
                     return redirect('/patient')
              
                 else:
@@ -462,7 +460,7 @@ def timeslot(request,id):
                 return redirect("/patient/timeslot/50")
             else:
                 appointments.objects.filter(patient_appointment_id = id1).update(slot_time=time,status="pending")
-                if patient.objects.filter(id=u).exists():
+                if patient.objects.filter(patient_id=u).exists():
                     return redirect('/patient')
              
                 else:
@@ -475,7 +473,7 @@ def timeslot(request,id):
                 return redirect("/patient/timeslot/50")
             else:
                 appointments.objects.filter(patient_appointment_id = id1).update(slot_time=time,status="pending")
-                if patient.objects.filter(id=u).exists():
+                if patient.objects.filter(patient_id=u).exists():
                     return redirect('/patient')
              
                 else:
@@ -489,7 +487,7 @@ def timeslot(request,id):
                 return redirect("/patient/timeslot/50")
             else:
                 appointments.objects.filter(patient_appointment_id = id1).update(slot_time=time,status="pending")
-                if patient.objects.filter(id=u).exists():
+                if patient.objects.filter(patient_id=u).exists():
                     return redirect('/patient')
              
                 else:
@@ -503,7 +501,7 @@ def timeslot(request,id):
                 return redirect("/patient/timeslot/50")
             else:
                 appointments.objects.filter(patient_appointment_id = id1).update(slot_time=time,status="pending")
-                if patient.objects.filter(id=u).exists():
+                if patient.objects.filter(patient_id=u).exists():
                     return redirect('/patient')
              
                 else:
@@ -517,7 +515,7 @@ def timeslot(request,id):
                 return redirect("/patient/timeslot/50")
             else:
                 appointments.objects.filter(patient_appointment_id = id1).update(slot_time=time,status="pending")
-                if patient.objects.filter(id=u).exists():
+                if patient.objects.filter(patient_id=u).exists():
                     return redirect('/patient')
              
                 else:
@@ -530,7 +528,7 @@ def timeslot(request,id):
                 return redirect("/patient/timeslot/50")
             else:
                 appointments.objects.filter(patient_appointment_id = id1).update(slot_time=time,status="pending")
-                if patient.objects.filter(id=u).exists():
+                if patient.objects.filter(patient_id=u).exists():
                     return redirect('/patient')
              
                 else:
@@ -543,7 +541,7 @@ def timeslot(request,id):
                 return redirect("/patient/timeslot/50")
             else:
                 appointments.objects.filter(patient_appointment_id = id1).update(slot_time=time,status="pending")
-                if patient.objects.filter(id=u).exists():
+                if patient.objects.filter(patient_id=u).exists():
                     return redirect('/patient')
              
                 else:
@@ -558,7 +556,7 @@ def timeslot(request,id):
                 return redirect("/patient/timeslot/50")
             else:
                 appointments.objects.filter(patient_appointment_id = id1).update(slot_time=time,status="pending")
-                if patient.objects.filter(id=u).exists():
+                if patient.objects.filter(patient_id=u).exists():
                     return redirect('/patient')
              
                 else:
@@ -572,7 +570,7 @@ def timeslot(request,id):
                 return redirect("/patient/timeslot/50")
             else:
                 appointments.objects.filter(patient_appointment_id = id1).update(slot_time=time,status="pending")
-                if patient.objects.filter(id=u).exists():
+                if patient.objects.filter(patient_id=u).exists():
                     return redirect('/patient')
              
                 else:
@@ -604,6 +602,7 @@ def prescription(request,id):
 #------------------------------------PATIENT DASHBOARD----------------------------------
 def receptionists(request):
     appointment = appointments.objects.filter(slot_date = datetime.now().strftime('%Y-%m-%d'),status="pending")
+    appointment = appointments.objects.all()
     print(appointment)
 
     return render(request,'dash_index.html',{'apps':appointment})
@@ -614,6 +613,7 @@ def receptionists(request):
 
 def doc_dash(request):
     appointment = appointments.objects.filter(slot_date = datetime.now().strftime('%Y-%m-%d'),status="pending")
+    appointment = appointments.objects.all()
     print(appointment)
 
     return render(request , 'doc_dash.html',{'apps':appointment})

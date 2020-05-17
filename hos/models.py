@@ -11,9 +11,9 @@ from django.db import models
     updated_at = models.TimeField(max_length=100,)'''
 
 class appointments(models.Model):
-    patient_appointment_id =models.IntegerField(primary_key=True)
+    patient_appointment_id =models.IntegerField()
     patient_email = models.EmailField()
-    patient_phone = models.BigIntegerField()
+    #patient_phone = models.BigIntegerField()
     patient_name = models.CharField(max_length=100,default="")
     patient_age = models.IntegerField()
     patient_gender = models.CharField(max_length=100,)
@@ -28,7 +28,7 @@ class appointments(models.Model):
 
 
 class patient(models.Model):
-    id = models.EmailField(primary_key=True)
+    patient_id = models.EmailField()
     first_name = models.CharField(max_length=10)
     last_name = models.CharField(max_length=10)
     age = models.IntegerField()
@@ -48,13 +48,13 @@ class patient(models.Model):
 
 
 class doctors(models.Model):
-    id = models.EmailField(primary_key=True)
+    doctor_id = models.EmailField()
     name = models.CharField(max_length=100)
     password = models.CharField(max_length=100)
     department = models.CharField(max_length=100)
     gender = models.CharField(max_length=100)
     location = models.CharField(max_length=100)
-    pincode = models.IntegerField(max_length=6)
+    pincode = models.IntegerField()
     hospital = models.CharField(max_length=100)
     #phone_no = models.IntegerField(max_length=1000)
 
@@ -62,7 +62,7 @@ class doctors(models.Model):
 
 class receptionist(models.Model):
     recep_name = models.CharField(max_length=100)
-    recep_id = models.EmailField(primary_key=True)
+    recep_id = models.EmailField()
     hospital_name = models.CharField(max_length=100)
     hospital_id = models.IntegerField()
 
@@ -86,7 +86,7 @@ class labReports(models.Model):
     upload_time = models.TimeField()
 
 class laboratory(models.Model):
-    id = models.EmailField(primary_key=True)
+    lab_id = models.EmailField()
     name = models.CharField(max_length=20)
     address = models.CharField(max_length=30)
     contact_no  = models.BigIntegerField()
